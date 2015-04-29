@@ -25,8 +25,6 @@ task.push(function (callback) {
     callback(null, msg);
 });
 
-
-
 //Custom Logger
 task.push(function (callback) {
     global.log = log;
@@ -78,7 +76,6 @@ task.push(function (callback) {
             register: hapiSwagger,
             options: {
                 apiVersion: pack.version,
-                basePath: 'http://' + _config.server.host + ':' + _config.server.port,
                 payloadType: 'json'
             }
         }, function (err) {
@@ -204,7 +201,7 @@ async.series(task, function (err, data) {
     } else {
         // Start the server
         server.start(function () {
-            log.cool('Server running on SERVER: ' + _config.server.host + ' PORT:' + process.env.PORT);
+            log.cool('Server running on SERVER: ' + (process.env.HOST ? process.env.HOST : _config.server.host) + ' PORT:' + (process.env.PORT ? process.env.PORT : _config.server.port));
         });
     }
 });

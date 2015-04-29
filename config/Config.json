@@ -6,13 +6,13 @@
       "allowCrossDomain": true
     },
     "database": {
-      "url": "mongodb://localhost:27017/boilerplate",
+      "url": "mongodb://localhost:27017/nodeclick",
       "poolSize": 5,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "hm-boilerplate",
+      "cookie": "nodeclick",
       "redirectTo": "/login",
       "isSecure": false
     },
@@ -31,13 +31,13 @@
       "allowCrossDomain": true
     },
     "database": {
-      "url": "mongodb://localhost:27017/boilerplate",
+      "url": "mongodb://localhost:27017/nodeclick",
       "poolSize": 5,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "hm-boilerplate",
+      "cookie": "nodeclick",
       "redirectTo": "/login",
       "isSecure": false
     },
@@ -56,13 +56,13 @@
       "allowCrossDomain": true
     },
     "database": {
-      "url": "mongodb://localhost:27017/boilerplate",
+      "url": "mongodb://kashish:abcde12345@ds061621.mongolab.com:61621/nodeclick",
       "poolSize": 5,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "hm-boilerplate",
+      "cookie": "nodeclick",
       "redirectTo": "/login",
       "isSecure": false
     },
@@ -81,13 +81,13 @@
       "allowCrossDomain": true
     },
     "database": {
-      "url": "mongodb://localhost:27017/boilerplate",
+      "url": "mongodb://localhost:27017/nodeclick",
       "poolSize": 5,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "hm-boilerplate",
+      "cookie": "nodeclick",
       "redirectTo": "/login",
       "isSecure": false
     },

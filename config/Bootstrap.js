@@ -8,7 +8,8 @@ module.exports = function (environment, callback) {
     var env = {
         "common": [Test],
         "development": [Test],
-        "production": [Test]
+        "production": [Test],
+        "staging": [Test]
     };
 
     function play(environment) {
