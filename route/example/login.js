@@ -11,7 +11,6 @@ module.exports = [
             description: 'Login Here',
             notes: 'Do login here',
             tags: ['api'],
-            cors: true,
             handler: function (request, reply) {
 
                 //To Authenticate User
