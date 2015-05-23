@@ -14,7 +14,7 @@ module.exports = function (environment, callback) {
 
     function play(environment) {
         async.series(env[environment], function (err, result) {
-            log.cool('Booting process completed.');
+            //log.cool('Booting process completed.');
             callback(err, result);
         })
     }
@@ -23,7 +23,7 @@ module.exports = function (environment, callback) {
 
     //Write your task here
     function Test(callback) {
-        log.cool('Test Task Runner');
+        //log.cool('Test Task Runner');
         callback(null, 'Test Task Runner')
     }
 };

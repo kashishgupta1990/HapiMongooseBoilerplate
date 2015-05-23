@@ -13,6 +13,8 @@ var Hapi = require('hapi'),
     hapiRole = require('./custom_modules/hapi-role-manager'),
     good = require('good'),
     EventEmitter = require("events").EventEmitter,
+    cluster = require('cluster'),
+    numCPUs = require('os').cpus().length,
     task = [],
     server = {},
     bootstrap;
@@ -29,7 +31,6 @@ task.push(function (callback) {
 task.push(function (callback) {
     global.log = log;
     var msg = 'Setting up Custom Logger';
-    log.info(msg);
     callback(null, msg);
 });
 
@@ -38,7 +39,6 @@ task.push(function (callback) {
 task.push(function (callback) {
     globalUtility.setGlobalConstant({_config: appConfig[process.env.name]});
     var msg = 'Setting up Global Configuration';
-    log.info(msg);
     callback(null, msg);
 });
 
@@ -50,7 +50,6 @@ task.push(function (callback) {
 //Running Bootstrap Task
 task.push(function (callback) {
     bootstrap = require('./config/Bootstrap');
-    log.info('Booting up your application');
     bootstrap(process.env.name, callback);
 });
 
@@ -80,12 +79,11 @@ task.push(function (callback) {
             }
         }, function (err) {
             var msg = 'Swagger interface loaded';
-            log.cool(msg);
             cb(err, msg);
         });
     });
 
-    plugin.push(function (callback) {
+    plugin.push(function (cb) {
         var msg = 'Hapi Auth Cookie Enabled';
         server.register(require('hapi-auth-cookie'), function (err) {
             server.auth.strategy('session', 'cookie', {
@@ -94,7 +92,7 @@ task.push(function (callback) {
                 redirectTo: _config.cookie.redirectTo,
                 isSecure: _config.cookie.isSecure
             });
-            callback(err, msg)
+            cb(err, msg)
         });
     });
 
@@ -113,7 +111,6 @@ task.push(function (callback) {
                 console.error(err);
             }
             var msg = 'Good Plugin loaded';
-            log.cool(msg);
             cb(err, msg);
         });
     });
@@ -131,7 +128,6 @@ task.push(function (callback) {
                 console.error(err);
             }
             var msg = 'Hapi Roles Plugin loaded';
-            log.cool(msg);
             cb(err, msg);
         });
     });
@@ -168,7 +164,6 @@ task.push(function (callback) {
     applyEmitterBind(__dirname + '/sharedServices');
     globalUtility.setGlobalConstant({sharedService: sharedService});
     var msg = 'Shared Service Events Binding Complete';
-    log.info(msg);
     callback(null, msg);
 });
 
@@ -190,7 +185,6 @@ task.push(function (callback) {
 
     applyRouteConfig(__dirname + '/route');
     var msg = 'Routs setup complete';
-    log.info(msg);
     callback(null, msg);
 });
 
@@ -199,10 +193,23 @@ async.series(task, function (err, data) {
     if (err) {
         process.exit();
     } else {
-        // Start the server
-        server.start(function () {
-            log.cool('Server running on SERVER: ' + (process.env.HOST ? process.env.HOST : _config.server.host) + ' PORT:' + (process.env.PORT ? process.env.PORT : _config.server.port));
-        });
+        //Running Cluster
+        if (cluster.isMaster) {
+            // Fork workers.
+            for (var i = 0; i < numCPUs; i++) {
+                cluster.fork();
+            }
+
+            cluster.on('exit', function (worker, code, signal) {
+                console.log('worker ' + worker.process.pid + ' died');
+            });
+        } else {
+            // In this case its a HTTP server
+            // Start the server
+            server.start(function () {
+                log.cool('Server running on SERVER: ' + (process.env.HOST ? process.env.HOST : _config.server.host) + ' PORT:' + (process.env.PORT ? process.env.PORT : _config.server.port));
+            });
+        }
     }
 });
 

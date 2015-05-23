@@ -7,7 +7,7 @@
     },
     "database": {
       "url": "mongodb://localhost:27017/nodeclick",
-      "poolSize": 5,
+      "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
@@ -32,7 +32,7 @@
     },
     "database": {
       "url": "mongodb://localhost:27017/nodeclick",
-      "poolSize": 5,
+      "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
@@ -57,7 +57,7 @@
     },
     "database": {
       "url": "mongodb://kashish:abcde12345@ds061621.mongolab.com:61621/nodeclick",
-      "poolSize": 5,
+      "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
@@ -82,7 +82,7 @@
     },
     "database": {
       "url": "mongodb://localhost:27017/nodeclick",
-      "poolSize": 5,
+      "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
