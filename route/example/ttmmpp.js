@@ -24,7 +24,7 @@ module.exports = [
         }
     },
     {
-        path: '/cart/product/{id}/stock',
+        path: '/cart/product/stock',
         method: ['PUT'],
         config: {
             description: 'BAG Here',
@@ -39,10 +39,11 @@ module.exports = [
                     "data": {
                         "product": {
                             "discountAmount": 300,
+                            "discountPercentage": 2,
                             "price": 1000,
                             "subTotal": 1000
                         },
-                        "quantity": 5,
+                        "quantity": 15,
                         "cartTotal": {
                             "total": 5000,
                             "subTotal": 5000,
@@ -165,7 +166,7 @@ module.exports = [
                                 ]
                             }
                         },
-                        "productCount": 7
+                        "productCount": 4
                     }
                 });
             }
@@ -185,7 +186,7 @@ module.exports = [
                     "message": "Successfully Remove From Cart",
                     "data": {
                         "product": {
-                            "id": "A2",
+                            "productId": "A2",
                             "size": "XL"
                         },
                         "cartTotal": {
@@ -395,7 +396,7 @@ module.exports = [
         }
     },
     {
-        path: '/cart/voucher/{code}/balance',
+        path: '/cart/voucher/{code}',
         method: ['GET'],
         config: {
             description: 'BAG Here',
@@ -409,6 +410,471 @@ module.exports = [
                     "data": {
                         "balance": 4000
                     }
+                });
+            }
+        }
+    },
+    {
+        path: '/content/navigation',
+        method: ['GET'],
+        config: {
+            description: 'BAG Here',
+            notes: 'BAG',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "data": {
+                        "topNavigation": [
+                            {
+                                "categoryId": "a7d27f82-edf2-4c52-94f2-04449cad0d1f",
+                                "children": [],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "undefined",
+                                "label": "NEW IN",
+                                "url": "/new-in-pl-a7d27f82-edf2-4c52-94f2-04449cad0d1f"
+                            },
+                            {
+                                "categoryId": "26e8d018-bbb5-4d9b-91ad-b124aeac4667",
+                                "children": [
+                                    {
+                                        "categoryId": "976ce99b-2de1-4974-8ae2-33aa7b1c110a",
+                                        "children": [
+                                            {
+                                                "categoryId": "59aae224-5920-477b-a3fe-815b5c09ecc9",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Winter Wear",
+                                                "url": "/men/winter-wear-pl-59aae224-5920-477b-a3fe-815b5c09ecc9"
+                                            },
+                                            {
+                                                "categoryId": "42c23cfc-277e-407b-8296-7b7c7a872f48",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Clearance",
+                                                "url": "/clearance-sale-pl-42c23cfc-277e-407b-8296-7b7c7a872f48"
+                                            }
+                                        ],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "undefined",
+                                        "label": "New arrivals",
+                                        "url": "/men/new-arrivals-pl-976ce99b-2de1-4974-8ae2-33aa7b1c110a"
+                                    },
+                                    {
+                                        "categoryId": "7b34c055-4ba1-4bcc-9abb-91f5d14b05ef",
+                                        "children": [
+                                            {
+                                                "categoryId": "24651ea3-c1fb-47ae-9c33-5f076e0deac4",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Casual Shirts",
+                                                "url": "/men/topwear/casual-shirts-pl-24651ea3-c1fb-47ae-9c33-5f076e0deac4"
+                                            },
+                                            {
+                                                "categoryId": "10829dfc-5187-44cd-bf38-cc6a1a10b23c",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "T-Shirts",
+                                                "url": "/men/topwear/t-shirts-pl-10829dfc-5187-44cd-bf38-cc6a1a10b23c"
+                                            },
+                                            {
+                                                "categoryId": "3c1bead7-5e2a-4501-898d-cb0b7c7b9c09",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Polos",
+                                                "url": "/men/topwear/polos-pl-3c1bead7-5e2a-4501-898d-cb0b7c7b9c09"
+                                            },
+                                            {
+                                                "categoryId": "005044bd-287c-4937-90c9-b49bcfaded11",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Pullovers",
+                                                "url": "/men/topwear/pullovers-pl-005044bd-287c-4937-90c9-b49bcfaded11"
+                                            }
+                                        ],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "undefined",
+                                        "label": "Topwear",
+                                        "url": "/men/top-wear-pl-7b34c055-4ba1-4bcc-9abb-91f5d14b05ef"
+                                    },
+                                    {
+                                        "categoryId": "3a52e2e0-b539-45ef-bb03-5d9b9a5e708b",
+                                        "children": [
+                                            {
+                                                "categoryId": "5effddfb-8d50-4611-a55b-64de68a19c09",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Track Pants",
+                                                "url": "/men/track-pants-pl-5effddfb-8d50-4611-a55b-64de68a19c09"
+                                            }
+                                        ],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "undefined",
+                                        "label": "Bottomwear",
+                                        "url": "/men/bottomwear-pl-3a52e2e0-b539-45ef-bb03-5d9b9a5e708b"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "undefined",
+                                "label": "MEN",
+                                "url": "/men-pl-26e8d018-bbb5-4d9b-91ad-b124aeac4667"
+                            },
+                            {
+                                "categoryId": "41d2c0e2-2485-42f7-8189-fbe8baead260",
+                                "children": [
+                                    {
+                                        "categoryId": "ca6d3bf2-eeb6-4d27-a198-727e74fbae99",
+                                        "children": [
+                                            {
+                                                "categoryId": "73fc0703-f74c-472d-ae87-6e87d624452a",
+                                                "children": [],
+                                                "fullParentPath": null,
+                                                "isActive": "true",
+                                                "isDeleted": "false",
+                                                "isVisible": "undefined",
+                                                "label": "Casual Shirts",
+                                                "url": "/casual-shirts-pl-73fc0703-f74c-472d-ae87-6e87d624452a"
+                                            }
+                                        ],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "undefined",
+                                        "label": "Topwear",
+                                        "url": "/topwear-pl-ca6d3bf2-eeb6-4d27-a198-727e74fbae99"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "undefined",
+                                "label": "WOMEN",
+                                "url": "/ women-pl-41d2c0e2-2485-42f7-8189-fbe8baead260"
+                            },
+                            {
+                                "categoryId": "38c43253-1277-48a3-9c05-9b33399879d3",
+                                "children": [],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "undefined",
+                                "label": "AS I AM",
+                                "url": "/as-i-am-pl-38c43253-1277-48a3-9c05-9b33399879d3"
+                            },
+                            {
+                                "categoryId": "",
+                                "children": [
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test1",
+                                        "url": "/"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test2",
+                                        "url": "/"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test3",
+                                        "url": "/"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test4",
+                                        "url": "/"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "BLOG",
+                                "url": "/blog"
+                            },
+                            {
+                                "categoryId": "",
+                                "children": [
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test",
+                                        "url": "/test"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "test",
+                                        "url": "/"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "MEDIA",
+                                "url": "/media-coverage"
+                            },
+                            {
+                                "categoryId": "aab3ea1a-b33e-4859-a2b1-aea841ca026f",
+                                "children": [
+                                    {
+                                        "categoryId": "3d809f87-ef8b-4c8d-965c-0da4bae7223f",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "undefined",
+                                        "label": "AS SALE",
+                                        "url": "/as-sale-pl-3d809f87-ef8b-4c8d-965c-0da4bae7223f"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "undefined",
+                                "label": "SALE",
+                                "url": "/sale-pl-aab3ea1a-b33e-4859-a2b1-aea841ca026f"
+                            }
+                        ],
+                        "footer": [
+                            {
+                                "categoryId": "",
+                                "children": [
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Our Story",
+                                        "url": "/our-story"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Promoters",
+                                        "url": "/the-promoters"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Media",
+                                        "url": "/media-coverage"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "ABOUT US",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": null,
+                                "children": [
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Cash On Delivery",
+                                        "url": "/cash-on-delivery"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Easy Returns",
+                                        "url": "/easy-returns"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Shipping Options",
+                                        "url": "/shipping-options"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "WHY US",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": null,
+                                "children": [
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Contact Us",
+                                        "url": "/help-n-contact"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Return & Exchange",
+                                        "url": "/return-segment"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Order Cancellation",
+                                        "url": "/order-cancellation"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "FAQ",
+                                        "url": "/faqs"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "HELP",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": null,
+                                "children": [
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Track My Order",
+                                        "url": "/sales/order/history"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Privacy Policy",
+                                        "url": "/privacy-policy"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Terms & Conditions",
+                                        "url": "/terms-n-conditions"
+                                    }
+                                ],
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "GENERAL",
+                                "url": "/"
+                            }
+                        ]
+                    },
+                    "status": true,
+                    "message": null
                 });
             }
         }
@@ -452,14 +918,15 @@ module.exports = [
                                     "name": "A1",
                                     "id": "A1",
                                     "description": "151ORMTHPL20",
-                                    "discountAmount": 0,
+                                    "discountAmount": 100,
+                                    "discountPercentage": 10,
                                     "price": 1000,
-                                    "subTotal": 1000,
                                     "size": "L",
                                     "color": "RED",
                                     "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1429247796/download_nhchd3.jpg"
                                 },
-                                "quantity": 2
+                                "quantity": 2,
+                                "subTotal": 1000
                             },
                             {
                                 "product": {
@@ -467,13 +934,14 @@ module.exports = [
                                     "id": "A2",
                                     "description": "151ORMTHPL20",
                                     "discountAmount": 0,
+                                    "discountPercentage": 0,
                                     "price": 1000,
-                                    "subTotal": 1000,
                                     "size": "XL",
                                     "color": "RED",
                                     "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1429247796/download_nhchd3.jpg"
                                 },
-                                "quantity": 3
+                                "quantity": 3,
+                                "subTotal": 1000
                             },
                             {
                                 "product": {
@@ -481,19 +949,21 @@ module.exports = [
                                     "id": "A3",
                                     "description": "151ORMTHPL20",
                                     "discountAmount": 250,
+                                    "discountPercentage": 0,
                                     "price": 1000,
-                                    "subTotal": 1000,
                                     "size": "XXL",
                                     "color": "RED",
                                     "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1429247796/download_nhchd3.jpg"
                                 },
-                                "quantity": 4
+                                "quantity": 4,
+                                "subTotal": 1000
                             }
                         ],
                         "cartTotal": {
                             "total": 8000,
                             "subTotal": 23030,
                             /*"discount": 500,*/
+                            /*"deliveryCharges":23,*/
                             "tax": {
                                 total: 2300,
                                 details: [
@@ -514,6 +984,329 @@ module.exports = [
                     }
                 };
                 reply(obj);
+            }
+        }
+    },
+    {
+        path: '/address',
+        method: ['GET'],
+        config: {
+            description: 'Delivery Here',
+            notes: 'Delivery Here',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "status": true,
+                    "message": "Delivery Address Successfully Fetch",
+                    "data": {
+                        addresses: [
+                            {
+                                id: '123123123-123123-123123',
+                                pinCode: 110063,
+                                fullName: 'Kashish Gupta',
+                                addressLine1: 'B4-82 Paschim Vihar',
+                                addressLine2: 'New Delhi',
+                                city: 'Delhi',
+                                state: 'Delhi',
+                                country: 'India',
+                                phone: '9999749722'
+                            },
+                            {
+                                id: '12312312-232-3-23-23',
+                                pinCode: 110063,
+                                fullName: 'Shubham Gupta',
+                                addressLine1: 'B4-82 Paschim Vihar',
+                                addressLine2: 'New Delhi',
+                                city: 'Delhi',
+                                state: 'Delhi',
+                                country: 'India',
+                                phone: '9999749722'
+                            }
+                        ]
+                    }
+                });
+            }
+        }
+    },
+    {
+        path: '/address',
+        method: ['POST'],
+        config: {
+            description: 'Delivery Here',
+            notes: 'Delivery Here',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "status": true,
+                    "message": "Address Successfully Saved",
+                    "data": {
+                        id: '12312312-232-3-23-23'
+                    }
+                });
+            }
+        }
+    },
+    {
+        path: '/address/{id}',
+        method: ['DELETE'],
+        config: {
+            description: 'Delivery Here',
+            notes: 'Delivery Here',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "status": true,
+                    "message": "Address Successfully Removed",
+                    "data": {
+                        id: '12312312-232-3-23-23'
+                    }
+                });
+            }
+        }
+    },
+    {
+        path: '/payment/provider',
+        method: ['GET'],
+        config: {
+            description: 'Payment Provider',
+            notes: 'Payment Provider',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "data": [
+                        {
+                            "provider": "Ccavenuepay Payment",
+                            "payment": [
+                                {
+                                    "mode": "Credit/Debit Card",
+                                    "methods": ["AMEX / Diners Club / Others", "VISA", "MasterCard"]
+                                },
+                                {
+                                    "mode": "Net Banking",
+                                    "methods": ["Net Banking"]
+                                }
+                            ]
+                        },
+                        {
+                            "provider": "PAYTM",
+                            "payment": [
+                                {
+                                    "mode": "Credit/Debit Card",
+                                    "methods": ["AMEX / Diners Club / Others", "VISA", "MasterCard"]
+                                },
+                                {
+                                    "mode": "Net Banking",
+                                    "methods": ["Net Banking"]
+                                }
+                            ]
+
+                        }
+                    ],
+                    "status": true,
+                    "message": "Returning all Payment Providers."
+                });
+            }
+        }
+    },
+    {
+        path: '/address/pincode/{code}',
+        method: ['GET'],
+        config: {
+            description: 'Delivery amount, Tax and COD available ',
+            notes: 'Delivery amount, Tax and COD available ',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "data": {
+                        "CODAvailable": true,
+                        "cartTotal": {
+                            "total": 2000,
+                            "subTotal": 2000,
+                            "deliveryCharges": 99,
+                            "giftVoucher": 10,
+                            "tax": {
+                                total: 20,
+                                details: [
+                                    {
+                                        label: "CST-Apparel",
+                                        percentage: 5,
+                                        amount: 5
+                                    },
+                                    {
+                                        label: "VAT-Apparel",
+                                        percentage: 18.5,
+                                        amount: 5
+                                    }
+                                ]
+                            }
+                        },
+                        "productCount": 4
+                    },
+                    "status": true,
+                    "message": "Pin code successfully applied"
+                });
+            }
+        }
+    },
+    {
+        path: '/category/landingpage',
+        method: ['GET'],
+        config: {
+            description: 'Landing Page',
+            notes: 'Landing Page',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "status": true,
+                    "message": "Landing Page Images successfully loaded.",
+                    "data": {
+                        "categoryId": "123123123-232-123123123",
+                        "name": "Men",
+                        "landingPageImages": [
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "1",
+                                "redirectUrl": "/google-1"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "2",
+                                "redirectUrl": "/google-2"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "3",
+                                "redirectUrl": "/google-3"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "4",
+                                "redirectUrl": "/google-4"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "5",
+                                "redirectUrl": "/google-5"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "6",
+                                "redirectUrl": "/google-6"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "7",
+                                "redirectUrl": "/google-7"
+                            },
+                            {
+                                "imageUrl": "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                "position": "8",
+                                "redirectUrl": "/google-8"
+                            }
+                        ]
+                    }
+                });
+            }
+        }
+    },
+    {
+        path: '/home',
+        method: ['GET'],
+        config: {
+            description: 'Home Page',
+            notes: 'Home Page',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "status": true,
+                    "message": "Home Page Images successfully loaded.",
+                    "data": {
+                        "homePageImages": [
+                            {
+                                "image": [
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/media/v3/home-page/The-Chic-List-home-slider-19may.jpg",
+                                        redirectUrl: "/google-1-1"
+                                    },
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/media/v3/home-page/high-on-color-polos-slider-19may1.jpg",
+                                        redirectUrl: "/google-1-2"
+                                    },
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/media/v3/home-page/The-Chic-List-home-slider-19may.jpg",
+                                        redirectUrl: "/google-1-3"
+                                    },
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/media/v3/home-page/high-on-color-polos-slider-19may1.jpg",
+                                        redirectUrl: "/google-1-4"
+                                    }
+                                ],
+                                "panel": 1
+                            },
+                            {
+                                "image": [
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/women-wearing-american-swan-floral-dress-home-page.jpg",
+                                        redirectUrl: "2-----1",
+                                        position: 1
+                                    },
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/men-wearing-americanswan-navy-trouusers.jpg",
+                                        redirectUrl: "2-----2",
+                                        position: 2
+                                    }
+                                ],
+                                "panel": 2
+                            },
+                            {
+                                "image": [
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/americanswan-top-flight-tees-collection.jpg",
+                                        redirectUrl: "/google-3"
+                                    }
+                                ],
+                                "panel": 3
+                            },
+                            {
+                                "image": [
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/bling-bling-women-accessories-americanswan.jpg",
+                                        redirectUrl: "/google-3",
+                                        position: 1
+                                    },
+                                    {
+                                        url: "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                        redirectUrl: "/google-3",
+                                        position: 2
+                                    }
+                                ],
+                                "panel": 4
+                            },
+                            {
+                                "image": [
+                                    {
+                                        url: "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                        redirectUrl: "/google-3",
+                                        position: 1
+                                    },
+                                    {
+                                        url: "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
+                                        redirectUrl: "/google-3",
+                                        position: 2
+                                    }
+                                ],
+                                "panel": 5
+                            }
+                        ]
+                    }
+                });
             }
         }
     }
