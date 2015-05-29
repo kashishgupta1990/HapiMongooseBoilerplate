@@ -1025,7 +1025,9 @@ module.exports = [
                             }
                         ]
                     }
-                });
+                })
+                    .state('yoyo', 'kashish')
+                    .header("Access-Control-Allow-Credentials", "true");
             }
         }
     },
@@ -1154,6 +1156,53 @@ module.exports = [
         }
     },
     {
+        path: '/checkout/payment',
+        method: ['GET'],
+        config: {
+            description: 'Delivery amount, Tax and COD available ',
+            notes: 'Delivery amount, Tax and COD available ',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                var requestPayload = {
+                    address: [
+                        {
+                            type: "billing",
+                            pinCode: 110063,
+                            fullName: 'Kashish Gupta',
+                            addressLine1: 'B4-82 Paschim Vihar',
+                            addressLine2: 'New Delhi',
+                            city: 'Delhi',
+                            state: 'Delhi',
+                            country: 'India',
+                            phoneNumber: '9999749722'
+                        },
+                        {
+                            type: "delievry",
+                            pinCode: 110063,
+                            fullName: 'Kashish Gupta',
+                            addressLine1: 'B4-82 Paschim Vihar',
+                            addressLine2: 'New Delhi',
+                            city: 'Delhi',
+                            state: 'Delhi',
+                            country: 'India',
+                            phoneNumber: '9999749722'
+                        }
+                    ],
+                    "emailId": "guest@intelligrape.com",
+                    "provider": {
+                        name: "PAYTM",
+                        "payment": {
+                            "mode": "Credit/Debit Card",
+                            "methods": "MasterCard"
+                        }
+                    }
+                }
+                reply(request.payload);
+            }
+        }
+    },
+    {
         path: '/category/landingpage',
         method: ['GET'],
         config: {
@@ -1228,9 +1277,9 @@ module.exports = [
                     "status": true,
                     "message": "Home Page Images successfully loaded.",
                     "data": {
-                        "homePageImages": [
+                        "homePagePanels": [
                             {
-                                "image": [
+                                "images": [
                                     {
                                         url: "http://static.americanswan.com/Lecom_Magento/media/v3/home-page/The-Chic-List-home-slider-19may.jpg",
                                         redirectUrl: "/google-1-1"
@@ -1251,7 +1300,7 @@ module.exports = [
                                 "panel": 1
                             },
                             {
-                                "image": [
+                                "images": [
                                     {
                                         url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/women-wearing-american-swan-floral-dress-home-page.jpg",
                                         redirectUrl: "2-----1",
@@ -1266,7 +1315,7 @@ module.exports = [
                                 "panel": 2
                             },
                             {
-                                "image": [
+                                "images": [
                                     {
                                         url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/americanswan-top-flight-tees-collection.jpg",
                                         redirectUrl: "/google-3"
@@ -1275,7 +1324,7 @@ module.exports = [
                                 "panel": 3
                             },
                             {
-                                "image": [
+                                "images": [
                                     {
                                         url: "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/bling-bling-women-accessories-americanswan.jpg",
                                         redirectUrl: "/google-3",
@@ -1290,7 +1339,7 @@ module.exports = [
                                 "panel": 4
                             },
                             {
-                                "image": [
+                                "images": [
                                     {
                                         url: "http://res.cloudinary.com/didijhb0z/image/upload/v1432021332/zqr2aqnqghcgkht46wo0.jpg",
                                         redirectUrl: "/google-3",
@@ -1306,6 +1355,179 @@ module.exports = [
                             }
                         ]
                     }
+                });
+            }
+        }
+    },
+    {
+        path: '/checkout/validate',
+        method: ['POST'],
+        config: {
+            description: 'Total Bag Count',
+            notes: 'Total Bag Count',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+
+                reply({
+                    status: true,
+                    message: "Valid Email ID",
+                    data: {
+                        "emailId": "guest@intelligrape.com"
+                    }
+                });
+
+                /* reply({
+                 status: false,
+                 message: "Valid Email ID",
+                 data: {
+                 "emailId": "guest@intelligrape.com"
+                 }
+                 });*/
+            }
+        }
+    },
+    {
+        path: '/checkout/payment',
+        method: ['POST'],
+        config: {
+            description: 'Checkout Payment',
+            notes: 'Total Bag Count',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    status: true,
+                    message: "To Be Decided"
+                });
+            }
+        }
+    },
+    {
+        path: '/banner',
+        method: ['GET'],
+        config: {
+            description: 'Checkout Payment',
+            notes: 'Total Bag Count',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                reply({
+                    "data": {
+                        "max": 2,
+                        "offset": 0,
+                        "productCategory": {
+                            "title": "Mens Sunglasses GOSF",
+                            "name": "Mens Sunglasses GOSF",
+                            "description": null,
+                            "widget": {
+                                "banners": [
+                                    {
+                                        "imageURL": "http://res.cloudinary.com/didijhb0z/image/upload/category/banners/dev/151ASWTHGT12-MEBL_abc.jpg",
+                                        "description": "tr",
+                                        "type": "Top-Banner",
+                                        "link": "ert"
+                                    },
+                                    {
+                                        "imageURL": "http://res.cloudinary.com/didijhb0z/image/upload/category/banners/dev/151ASWTHGT12-MEBL_abc.jpg",
+                                        "description": "as",
+                                        "type": "Banner-Strip",
+                                        "link": "ds"
+                                    },
+                                    {
+                                        "imageURL": "http://res.cloudinary.com/didijhb0z/image/upload/category/banners/dev/Screenshot from 2015-02-24 15:11:06.png",
+                                        "description": "f",
+                                        "type": "Banner-Strip",
+                                        "link": "sa"
+                                    }
+                                ],
+                                "showTicker": true,
+                                "activationTimeStamp": 1451939400000,
+                                "duration": 439800000
+                            }
+                        },
+                        "totalProducts": 1,
+                        "sortingOptions": [
+                            "Discount",
+                            "Arrival"
+                        ],
+                        "productList": [
+                            {
+                                "pageUrl": "http: //www.americanswan.com/whatcom-golden-glow-pullover.html",
+                                "currencyType": "INR",
+                                "currencySymbol": "Rs",
+                                "oldPrice": 1799.0,
+                                "discountPercentage": 0,
+                                "specialPrice": 1799.0,
+                                "name": "151ASMBKPT01",
+                                "sizes": [],
+                                "imageData": [
+                                    {
+                                        url: "http://res.cloudinary.com/didijhb0z/image/upload/product/images/qa/151ASMTFSH03-RED/151ASMTFSH03-RED_1.jpg",
+                                        type: "main"
+                                    },
+                                    {
+                                        url: "http://static.americanswan.com/Lecom_Magento/media/catalog/product/cache/1/hover_image/235x250/9df78eab33525d08d6e5fb8d27136e95/1/5/151ORMTHSH10-ORWH_hover__6_1.jpg",
+                                        type: "hover"
+                                    }
+                                ]
+
+                            }
+                        ],
+                        "leftNav": {
+                            "categoryNavigation": {
+                                "label": "ACCESSORIES",
+                                "url": "",
+                                "categoryId": "2b0d432c-a1d5-443e-bfcd-029d6b2fc119",
+                                "isSelected": false,
+                                "children": [
+                                    {
+                                        "label": "Mens Sunglasses GOSF",
+                                        "url": null,
+                                        "categoryId": "04252288-7fa9-4156-ad39-1be9a587e5c3",
+                                        "isSelected": true,
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            "filterGroup": [
+                                {
+                                    "label": "price",
+                                    "options": [
+                                        {
+                                            "code": null,
+                                            "label": "Rs1500 - Rs2000",
+                                            "isSelected": false,
+                                            "productCount": 1
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "color",
+                                    "options": [
+                                        {
+                                            "label": "Red",
+                                            "isSelected": false,
+                                            "productCount": 1
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "discount",
+                                    "options": [
+                                        {
+                                            "code": null,
+                                            "label": "No Discount",
+                                            "isSelected": false,
+                                            "productCount": 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "status": 200,
+                    "message": "Category found"
                 });
             }
         }

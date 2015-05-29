@@ -65,6 +65,17 @@ task.push(function (callback) {
         }
     });
 
+    server.state('data', {
+        ttl: null,
+        isSecure: true,
+        isHttpOnly: true,
+        encoding: 'base64json',
+        path:'/',
+        domain:'.tushar.com.',
+        clearInvalid: false, // remove invalid cookies
+        strictHeader: true // don't allow violations of RFC 6265
+    });
+
     callback(null, 'server variable setting up');
 });
 
