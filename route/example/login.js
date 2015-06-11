@@ -1,6 +1,9 @@
 "use strict";
 
 var Joi = require('joi');
+var service = {
+    login:require('../../service/example/login.service')
+};
 
 //Routs Lists
 module.exports = [
@@ -15,7 +18,8 @@ module.exports = [
 
                 //To Authenticate User
                 request.auth.session.set({roles: ['user'], password: 'pioneer'});
-                sharedService.emit("someEvent", {name: 'kashish'});
+                globalEvent.emit("someEvent", {name: 'kashish'});
+                service.login.login();
                 reply('successfully login');
 
             }
