@@ -7,7 +7,7 @@ var Joi = require('joi');
 module.exports = [
     {
         method: 'GET',
-        path: '/',
+        path: '/yoyoyo',
         config: {
             auth: {
                 mode: 'try',

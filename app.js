@@ -183,8 +183,21 @@ task.push(function (callback) {
         });
     }
 
+    // Static Directory Route
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: _config.server.publicDirectory,
+                listing: false
+            }
+        }
+    });
+
     applyRouteConfig(__dirname + '/route');
     var msg = 'Routs setup complete';
+
     callback(null, msg);
 });
 

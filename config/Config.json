@@ -3,6 +3,7 @@
     "server": {
       "host": "localhost",
       "port": "7002",
+      "publicDirectory":"public",
       "allowCrossDomain": true
     },
     "database": {
@@ -28,6 +29,7 @@
     "server": {
       "host": "localhost",
       "port": "7002",
+      "publicDirectory":"public",
       "allowCrossDomain": true
     },
     "database": {
@@ -53,6 +55,7 @@
     "server": {
       "host": "localhost",
       "port": "7002",
+      "publicDirectory":"public",
       "allowCrossDomain": true
     },
     "database": {
@@ -78,6 +81,7 @@
     "server": {
       "host": "localhost",
       "port": "7002",
+      "publicDirectory":"public",
       "allowCrossDomain": true
     },
     "database": {
