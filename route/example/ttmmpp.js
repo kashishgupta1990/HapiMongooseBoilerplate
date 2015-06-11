@@ -1407,8 +1407,6 @@ module.exports = [
         path: '/banner',
         method: ['GET'],
         config: {
-            description: 'Checkout Payment',
-            notes: 'Total Bag Count',
             tags: ['api'],
             handler: function (request, reply) {
                 log.cool('Request Payload: ', request.payload);
@@ -1529,6 +1527,649 @@ module.exports = [
                     "status": 200,
                     "message": "Category found"
                 });
+            }
+        }
+    },
+    {
+        path: '/commonPageContent',
+        method: ['GET'],
+        config: {
+            description: 'Website config',
+            notes: 'Website config',
+            tags: ['api'],
+            handler: function (request, reply) {
+                log.cool('Request Payload: ', request.payload);
+                var obj = {
+                    "data": {
+                        "header": {
+                            "cartProductCount": 3,
+                            "topLeftBanner": {
+                                "isActive": true,
+                                "activationTimeStamp": 1433222371302,
+                                "duration": 439800000,
+                                "redirectUrl": "http://www.google.com",
+                                "imageUrl": "http://static.americanswan.com/Lecom_Magento/skin/frontend/enterprise/lecom/images-v3/us_flag.png",
+                                "description": "EXTRA 45% OFF ON WOMEN’S APPAREL & ACCS, USE CODE \"PINK\"",
+                                "title": "HELLO SUNSHINE"
+                            },
+                            "navigationMenu": [
+                                {
+                                    "categoryId": "f69cfd21-763a-457c-961e-f7f63f1b6b8b",
+                                    "children": [],
+                                    "doesLandingPageExist": false,
+                                    "fullParentPath": "",
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "undefined",
+                                    "label": "NEW IN",
+                                    "url": "/new-in"
+                                },
+                                {
+                                    "categoryId": "66c1e7d4-5669-4fff-af0e-626d205bc5a5",
+                                    "children": [
+                                        {
+                                            "categoryId": "4d9114ac-cbdb-462f-a0d9-e744f7a5cbac",
+                                            "children": [
+                                                {
+                                                    "categoryId": "46f8a7bd-9f74-4eaf-a727-0ff7e6664709",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Casual Shirts",
+                                                    "url": "/men/casual-shirts"
+                                                },
+                                                {
+                                                    "categoryId": "2e767655-47d8-418a-8f49-c82d5eb85a6b",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "T-Shirts",
+                                                    "url": "/men/t-shirts"
+                                                },
+                                                {
+                                                    "categoryId": "b382fa88-b8db-47c3-b974-9226229283b5",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Polos",
+                                                    "url": "/men/polos"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "MEN",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "Topwear",
+                                            "url": "/men/topwear"
+                                        },
+                                        {
+                                            "categoryId": "0e6e7714-45b7-403a-9cd1-f0d1eba54ecc",
+                                            "children": [
+                                                {
+                                                    "categoryId": "3225971c-2742-4602-ae71-5ec85c0fb5ed",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Track Pants",
+                                                    "url": "/men/track-pants"
+                                                },
+                                                {
+                                                    "categoryId": "59aef3a9-a8e9-4306-92e4-ae2fa694971c",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Formal Trouser",
+                                                    "url": "/men/formal-trouser"
+                                                },
+                                                {
+                                                    "categoryId": "b685d91c-5ca6-41f6-9fec-477983a4b655",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Denim",
+                                                    "url": "/men/denim"
+                                                },
+                                                {
+                                                    "categoryId": "737a542b-8ab3-4454-ba52-ee08acfe5a8c",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Track Shorts",
+                                                    "url": "/men/track-shorts"
+                                                },
+                                                {
+                                                    "categoryId": "59aef3a9-a8e9-4306-92e4-ae2fa694971c",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Casual Trouser",
+                                                    "url": "/men/casual-trouser"
+                                                },
+                                                {
+                                                    "categoryId": "737a542b-8ab3-4454-ba52-ee08acfe5a8c",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "MEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Shorts",
+                                                    "url": "/men/shorts"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "MEN",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "Bottomwear",
+                                            "url": "/men/bottomwear"
+                                        },
+                                        {
+                                            "categoryId": "6a3bf2eb-9a4e-4312-9728-8daaa95afb60",
+                                            "children": [
+                                                {
+                                                    "categoryId": "de200643-908e-4d74-acb5-b30898fe8029",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "FOOTWEAR",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Sneakers",
+                                                    "url": "/footwear/sneakers"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "FOOTWEAR",
+                                            "url": "/footwear"
+                                        }
+                                    ],
+                                    "doesLandingPageExist": true,
+                                    "fullParentPath": "",
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "undefined",
+                                    "label": "MEN",
+                                    "url": "/men"
+                                },
+                                {
+                                    "categoryId": "3d443bb7-8314-4df6-a8a0-6c4e00fd3769",
+                                    "children": [
+                                        {
+                                            "categoryId": "101c598b-2bbb-4675-ae99-2b52ed84b247",
+                                            "children": [
+                                                {
+                                                    "categoryId": "df5db355-0d73-4d82-b4c0-bc96698ee336",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Casual Shirts",
+                                                    "url": "/women/casual-shirts"
+                                                },
+                                                {
+                                                    "categoryId": "74394a45-e584-477c-8c39-b53deb71f13a",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Tops",
+                                                    "url": "/women/tops"
+                                                },
+                                                {
+                                                    "categoryId": "af2c53e9-e53a-4a3a-839c-7814f8cf7ba0",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "T-Shirts",
+                                                    "url": "/women/t-shirts"
+                                                },
+                                                {
+                                                    "categoryId": "7390657e-5c42-47ab-bd20-4d42b17442d2",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Polos",
+                                                    "url": "/women/polos"
+                                                },
+                                                {
+                                                    "categoryId": "9fe4efdc-78ad-4826-9492-0e154dbd1de5",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Dress",
+                                                    "url": "/women/dress"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "WOMEN",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "Topwear",
+                                            "url": "/women/topwear"
+                                        },
+                                        {
+                                            "categoryId": "d09c2c88-4c5c-42ef-bbce-39fd50cefbcf",
+                                            "children": [
+                                                {
+                                                    "categoryId": "4a5a74cd-9fee-4e91-b938-ab0ab18b3e0e",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Track Pants",
+                                                    "url": "/women/track-pants"
+                                                },
+                                                {
+                                                    "categoryId": "7af6d971-b94f-49b4-89ff-def6df6edd59",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Denim",
+                                                    "url": "/women/denim"
+                                                },
+                                                {
+                                                    "categoryId": "d4efb60a-1608-4b75-87dc-f2daa9261e72",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Shorts/Skirt",
+                                                    "url": "/women/shorts"
+                                                },
+                                                {
+                                                    "categoryId": "b3a0eb75-f6dc-4763-a851-077b3ad773ff",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Pants",
+                                                    "url": "/women/pants"
+                                                },
+                                                {
+                                                    "categoryId": "06a527a6-075a-490c-9fcc-e5c48d698fe5",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "WOMEN",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Casual Trouser",
+                                                    "url": "/women/casual-trouser"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "WOMEN",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "Bottomwear",
+                                            "url": "/women/bottomwear"
+                                        },
+                                        {
+                                            "categoryId": "6368d072-6f71-46e9-b716-4a5cbe0ee6a1",
+                                            "children": [
+                                                {
+                                                    "categoryId": "aee50e32-dd9b-4bc3-a876-cc9f57e9111e",
+                                                    "children": [],
+                                                    "doesLandingPageExist": false,
+                                                    "fullParentPath": "ACCESSORIES",
+                                                    "isActive": "true",
+                                                    "isDeleted": "false",
+                                                    "isVisible": "undefined",
+                                                    "label": "Belts - Women",
+                                                    "url": "/accessories/belts"
+                                                }
+                                            ],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "ACCESSORIES",
+                                            "url": "/accessories"
+                                        }
+                                    ],
+                                    "doesLandingPageExist": true,
+                                    "fullParentPath": "",
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "undefined",
+                                    "label": "WOMEN",
+                                    "url": "/women"
+                                },
+                                {
+                                    "categoryId": "39becea4-6484-4829-9722-61bc52037930",
+                                    "children": [],
+                                    "doesLandingPageExist": false,
+                                    "fullParentPath": "",
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "undefined",
+                                    "label": "AS I AM",
+                                    "url": "/as-i-am"
+                                },
+                                {
+                                    "categoryId": "",
+                                    "children": [
+                                        {
+                                            "categoryId": null,
+                                            "children": [],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": null,
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "true",
+                                            "label": "Trends",
+                                            "url": "/gallery"
+                                        }
+                                    ],
+                                    "doesLandingPageExist": false,
+                                    "fullParentPath": null,
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "true",
+                                    "label": "BLOG",
+                                    "url": "/blog"
+                                },
+                                {
+                                    "categoryId": "",
+                                    "children": [],
+                                    "doesLandingPageExist": false,
+                                    "fullParentPath": null,
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "true",
+                                    "label": "MEDIA",
+                                    "url": "/media-coverage"
+                                },
+                                {
+                                    "categoryId": "a48f801d-e142-4d7d-8d26-0df5d58025ee",
+                                    "children": [
+                                        {
+                                            "categoryId": "31d06ae2-517d-44ba-a03f-b7f57db5e40e",
+                                            "children": [],
+                                            "doesLandingPageExist": false,
+                                            "fullParentPath": "SALE",
+                                            "isActive": "true",
+                                            "isDeleted": "false",
+                                            "isVisible": "undefined",
+                                            "label": "OH MY SALE",
+                                            "url": "/sale/oh-my-sale"
+                                        }
+                                    ],
+                                    "doesLandingPageExist": false,
+                                    "fullParentPath": "",
+                                    "isActive": "true",
+                                    "isDeleted": "false",
+                                    "isVisible": "undefined",
+                                    "label": "SALE",
+                                    "url": "/sale2"
+                                }
+                            ]
+                        },
+                        "footer": [
+                            {
+                                "categoryId": "",
+                                "children": [
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Our Story",
+                                        "url": "/our-story"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Promoters",
+                                        "url": "/the-promoters"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Media",
+                                        "url": "/media-coverage"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Testimonials",
+                                        "url": "/testimonials"
+                                    }
+                                ],
+                                "doesLandingPageExist": false,
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "ABOUT US",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": "",
+                                "children": [
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Cash On Delivery",
+                                        "url": "/cash-on-delivery"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Easy Returns",
+                                        "url": "/easy-returns"
+                                    },
+                                    {
+                                        "categoryId": "",
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Shipping Options",
+                                        "url": "/shipping-options"
+                                    }
+                                ],
+                                "doesLandingPageExist": false,
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "WHY US",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": null,
+                                "children": [
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Contact Us",
+                                        "url": "/help-n-contact"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Return & Exchange",
+                                        "url": "/return-segment"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Order Cancellation",
+                                        "url": "/order-cancellation"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "FAQ",
+                                        "url": "/faqs"
+                                    }
+                                ],
+                                "doesLandingPageExist": false,
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "HELP",
+                                "url": "/"
+                            },
+                            {
+                                "categoryId": null,
+                                "children": [
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Track My Order",
+                                        "url": "/sales/order/history"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Privacy Policy",
+                                        "url": "/privacy-policy"
+                                    },
+                                    {
+                                        "categoryId": null,
+                                        "children": [],
+                                        "doesLandingPageExist": false,
+                                        "fullParentPath": null,
+                                        "isActive": "true",
+                                        "isDeleted": "false",
+                                        "isVisible": "true",
+                                        "label": "Terms & Conditions",
+                                        "url": "/terms-n-conditions"
+                                    }
+                                ],
+                                "doesLandingPageExist": false,
+                                "fullParentPath": null,
+                                "isActive": "true",
+                                "isDeleted": "false",
+                                "isVisible": "true",
+                                "label": "GENERAL",
+                                "url": "/"
+                            }
+                        ]
+                    },
+                    "status": true,
+                    "message": "aasdasdasd"
+            };
+                reply(obj);
             }
         }
     }
