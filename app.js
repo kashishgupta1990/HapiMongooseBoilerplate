@@ -44,7 +44,12 @@ task.push(function (callback) {
 
 //Mongoose
 task.push(function (callback) {
-    mongooseAuto(_config.database, callback);
+    if(_config.database.required){
+        mongooseAuto(_config.database, callback);
+    }else{
+        callback(null,"Mongoose not required");
+    }
+
 });
 
 //Running Bootstrap Task
