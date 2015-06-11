@@ -137,14 +137,14 @@ task.push(function (callback) {
     });
 });
 
-//Apply Emitter Binding
+//Global Emitter Binding
 task.push(function (callback) {
 
-    var sharedService = new EventEmitter();
+    var globalEvent = new EventEmitter();
 
     function createEmitterEvent(eventList) {
         eventList.forEach(function (event) {
-            sharedService.on(event.eventName, event.handler);
+            globalEvent.on(event.eventName, event.handler);
         });
     }
 
@@ -161,9 +161,9 @@ task.push(function (callback) {
         });
     }
 
-    applyEmitterBind(__dirname + '/sharedServices');
-    globalUtility.setGlobalConstant({sharedService: sharedService});
-    var msg = 'Shared Service Events Binding Complete';
+    applyEmitterBind(__dirname + '/globalEvent');
+    globalUtility.setGlobalConstant({globalEvent: globalEvent});
+    var msg = 'Global Event Binding Complete';
     callback(null, msg);
 });
 
