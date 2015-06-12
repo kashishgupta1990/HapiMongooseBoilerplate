@@ -182,7 +182,7 @@ task.push(function (callback) {
             var path = dirName + '/' + dta;
             if (fs.lstatSync(path).isDirectory()) {
                 applyRouteConfig(path);
-            } else {
+            }else if(dta.match(/.route./)){
                 server.route(require(path));
             }
         });
@@ -200,7 +200,7 @@ task.push(function (callback) {
         }
     });
 
-    applyRouteConfig(__dirname + '/route');
+    applyRouteConfig(__dirname + '/api');
     var msg = 'Routs setup complete';
 
     callback(null, msg);

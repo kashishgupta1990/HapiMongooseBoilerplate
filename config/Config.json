@@ -1,31 +1,4 @@
 {
-  "common": {
-    "server": {
-      "host": "localhost",
-      "port": "7002",
-      "publicDirectory":"public",
-      "allowCrossDomain": true
-    },
-    "database": {
-      "required": true,
-      "url": "mongodb://localhost:27017/nodeclick",
-      "poolSize": 2,
-      "tryToConnect": true
-    },
-    "cookie": {
-      "password": "secret",
-      "cookie": "nodeclick",
-      "redirectTo": "/login",
-      "isSecure": false
-    },
-    "userRoles": {
-      "rolesType": [
-        "user",
-        "admin"
-      ],
-      "roleFieldName": "roles"
-    }
-  },
   "development": {
     "server": {
       "host": "localhost",
@@ -35,7 +8,7 @@
     },
     "database": {
       "required": true,
-      "url": "mongodb://localhost:27017/nodeclick",
+      "url": "mongodb://kashish:abcde12345@ds061621.mongolab.com:61621/nodeclick",
       "poolSize": 2,
       "tryToConnect": true
     },

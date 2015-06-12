@@ -5,7 +5,7 @@ var Joi = require('joi');
 //Routs Lists
 module.exports = [
     {
-        path: '/logout',
+        path: '/api/v1/auth/logout',
         method: ['POST'],
         config: {
             description: 'Login Here',

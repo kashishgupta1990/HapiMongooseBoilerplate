@@ -2,13 +2,13 @@
 
 var Joi = require('joi');
 var service = {
-    login:require('../../service/example/login.service')
+    login:require('./login.service')
 };
 
 //Routs Lists
 module.exports = [
     {
-        path: '/login',
+        path: '/api/v1/auth/login',
         method: ['POST'],
         config: {
             description: 'Login Here',

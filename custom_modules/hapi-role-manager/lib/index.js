@@ -16,12 +16,12 @@ exports.register = function (server, options, next) {
 
                 var routes = (connection.routingTable) ? connection.routingTable() : connection.table();
 
-                // Loop through each route
+                // Loop through each api
                 routes.forEach(function (route) {
 
                     var hapiRoleManagerParams = route.settings.plugins[pluginName] ? route.settings.plugins[pluginName] : false;
 
-                    //If hapi-role-manager defined in route then
+                    //If hapi-role-manager defined in api then
                     if (hapiRoleManagerParams !== false) {
                         hapiRoleManagerParams.forEach(function (data) {
                             if (options.rolesType.indexOf(data) === -1) {
