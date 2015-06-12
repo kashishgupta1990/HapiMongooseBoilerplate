@@ -106,10 +106,30 @@ task.push(function (callback) {
             register: good,
             options: {
                 opsInterval: 1000,
-                reporters: [{
-                    reporter: require('good-console'),
-                    events: {log: '*', response: '*'}
-                }]
+                reporters: [
+                    {
+                        reporter: require('good-console'),
+                        events: {
+                            log: '*',
+                            response: '*'
+                        },
+                        config: {
+                            format: 'DD-MM-YYYY/HH:mm:ss.SSS',
+                            utc: true
+                        }
+                    },
+                    {
+                        reporter: require('good-file'),
+                        events: {
+                            log: '*',
+                            response: '*'
+                        },
+                        config: {
+                            path: './logs',
+                            format: 'DD-MM-YYYY/HH:mm:ss.SSS'
+                        }
+                    }
+                ]
             }
         }, function (err) {
             if (err) {
