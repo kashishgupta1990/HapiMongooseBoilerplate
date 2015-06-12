@@ -6,7 +6,6 @@ module.exports = function (environment, callback) {
 
     //Add your task name here
     var env = {
-        "common": [Test],
         "development": [Test],
         "production": [Test],
         "staging": [Test]
