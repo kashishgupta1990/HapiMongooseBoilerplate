@@ -117,7 +117,7 @@ task.push(function (callback) {
                             format: 'DD-MM-YYYY/HH:mm:ss.SSS',
                             utc: true
                         }
-                    },
+                    }/*,
                     {
                         reporter: require('good-file'),
                         events: {
@@ -128,7 +128,7 @@ task.push(function (callback) {
                             path: './logs',
                             format: 'DD-MM-YYYY/HH:mm:ss.SSS'
                         }
-                    }
+                    }*/
                 ]
             }
         }, function (err) {

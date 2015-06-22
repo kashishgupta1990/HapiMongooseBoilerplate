@@ -8,13 +8,13 @@
     },
     "database": {
       "required": true,
-      "url": "mongodb://kashish:abcde12345@ds061621.mongolab.com:61621/nodeclick",
+      "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "nodeclick",
+      "cookie": "boilerplate",
       "redirectTo": "/login",
       "isSecure": false
     },
@@ -35,13 +35,13 @@
     },
     "database": {
       "required": true,
-      "url": "mongodb://kashish:abcde12345@ds061621.mongolab.com:61621/nodeclick",
+      "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "nodeclick",
+      "cookie": "boilerplate",
       "redirectTo": "/login",
       "isSecure": false
     },
@@ -62,13 +62,13 @@
     },
     "database": {
       "required": true,
-      "url": "mongodb://localhost:27017/nodeclick",
+      "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
     },
     "cookie": {
       "password": "secret",
-      "cookie": "nodeclick",
+      "cookie": "boilerplate",
       "redirectTo": "/login",
       "isSecure": false
     },
