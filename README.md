@@ -18,7 +18,13 @@
   - [Lets Build Together](#lets-build-together)
   - [Revision History](#revision-history)
 
-#Hapi Mongoose Boilerplate#
+
+#Hapi Mongoose Boilerplate #
+Readme is outdated wait for some time to get new exciting updates in Boilerplate.
+Just clone this repository to find new features
+
+- We have removed the ES6 Fetures because its already there in iojs :-)
+
 This Boilerplate is ready to use pack having very exciting feature of HapiJs and MongooseJs. This Boilerplate having some of common plugin which can be used as per required.
 
 This boilerplate will give you a quick start to your Node Application Server with HapiJs.
