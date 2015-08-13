@@ -20,16 +20,14 @@
 
 
 #Hapi Mongoose Boilerplate #
-Readme is outdated wait for some time to get new exciting updates in Boilerplate.
-Just clone this repository to find new features
 
-- We have removed the ES6 Fetures because its already there in iojs :-)
+This Boilerplate is ready to use pack having very exciting feature of HapiJs and MongooseJs. 
 
-This Boilerplate is ready to use pack having very exciting feature of HapiJs and MongooseJs. This Boilerplate having some of common plugin which can be used as per required.
+This Boilerplate having some of common plugin which can be used as per required.
 
 This boilerplate will give you a quick start to your Node Application Server with HapiJs.
 
-This Boilerplate also supports ``ECAMA Script 6`` syntax. For that Traceur library has been used. We are Hapi to release this exciting version to build your Node app on Hapi-Mongoose-Boilerplate.
+We are Hapi to release this exciting version to build your Node app on Hapi-Mongoose-Boilerplate.
 
 ##Installation##
 This library is available for **Node** only. See the installation steps below:
@@ -41,41 +39,52 @@ $ git clone git@github.com:kashishgupta1990/HapiMongooseBoilerplate.git
 ###NPM Install(npm)###
 ```bash
 $ npm install
+$ node app.js (By Default you can see server running on Address http://localhost:7002)
 ```
 ##Boilerplate Structure##
 
+  - api
+    - CreateFolder(login)
+      - FileName.route.js (login.route.js)
+      - FileName.service.js (login.service.js)
+      - CreateFolder (You can make sub-nesting folder..)
+          - FileName.route.js (So on ..)
+          - FileName.service.js (So on ..)
+    - CreateFolder (So on ..)
+      - FileName.route.js (So on ..)
+      - FileName.service.js (So on ..)
   - config
     - Bootstrap.js
     - Config.json
-    - plugin.json
   - custom_modules
-   - custom-imagemim-log
-   - custom_redis
-   - es6Support
-   - global-utility
-   - mongooseAuto
+    - custom-imagemim-log
+    - global-utility
+    - hapi-role-manager
+    - mongooseAuto
+  - globalEvent
+    - FileName.js
+    - OneMoreFileName.js
+    - So on...
   - mongooseDomain
-   - SampleModel.js
-   - User.js
-   - add more models yourself ...
-  - route
-   - api
-       - test1.js
-       - add more file yourself ...
-   - example
-       - auth.js
-       - dbOperation.js
-       - ecma6api.js
-       - redisOperation.js
-       - restapi.js
-       - add more file yourself ...
-    - sample
-       - restapi.js
-       - add more files yourself...
-   - add more route folder yourself...
-
-
-##Setting up configration##
+    - SampleModel.js
+    - User.js
+    - add more models yourself ...
+  - node_modules 
+    - contains all the dependency ...
+  - public (Contain all public folder)
+    - index.html 
+    - css
+    - So on..
+  - sharedService
+    - FileName.js
+    - FolderName
+      - FileName.service.js
+      - So on...
+    - more files ..
+    - more folders ..
+  - app.js (main file of the project)
+  
+##Setting up configuration (Folder: config)##
 ###Bootstrap.js###
 ``Bootstrap.js`` is a task runner file which executes on start of application according to appropriate environment settings.
 See below given snippet for quick start to create task named ``Test`` and run on ``development`` environment
@@ -92,6 +101,7 @@ module.exports = function (environment, callback) {
         log.cool('Test Task Runner');
         callback(null, 'Test Task Runner')
     }
+    
 };
 ```
 
@@ -118,20 +128,6 @@ module.exports = function (environment, callback) {
   }
 ```
 
-###plug.json###
-``plug.json`` you can plug/unplug your boilerplate extra feature like Hapi Swagger etc using plug.js.
-```javascript
-{
-  "hapiPlugin": {
-    "Swagger": true, //Yes, I want Hapi Swagger
-    "hapiAuthCookie": true //Yes, I want AuthCookie
-  },
-  "ecma6Plugin": {
-    "enabled": true, //Yes, I want to enable ECMAScript6
-    "debug": false //But I dont want to see debug result
-  }
-}
-```
 ##Mongoose Domain and Modal##
 
 ###mongooseDomain###
@@ -219,4 +215,4 @@ module.exports = [
 Just open an issue in case found any bug(There is always a scope of improvement). We are always open for suggestion / issue / add new feature request. Fork and start creating pull request. :-)
 
 ##Revision History##
-* **Version v0.0.1**: The first poc release v0.0.1.
+* **Version v0.1.0**: The second poc release v0.1.0.

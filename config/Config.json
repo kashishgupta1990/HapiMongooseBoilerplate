@@ -7,7 +7,7 @@
       "allowCrossDomain": true
     },
     "database": {
-      "required": true,
+      "required": false,
       "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
@@ -34,7 +34,7 @@
       "allowCrossDomain": true
     },
     "database": {
-      "required": true,
+      "required": false,
       "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
@@ -61,7 +61,7 @@
       "allowCrossDomain": true
     },
     "database": {
-      "required": true,
+      "required": false,
       "url": "mongodb://localhost:27017/boilerplate",
       "poolSize": 2,
       "tryToConnect": true
